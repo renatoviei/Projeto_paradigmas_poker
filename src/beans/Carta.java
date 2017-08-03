@@ -26,3 +26,4 @@ public class Carta {
 	}
 
 }
+///thiago frango
