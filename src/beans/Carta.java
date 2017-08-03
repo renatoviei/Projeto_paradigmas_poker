@@ -1,5 +1,5 @@
 package beans;
-
+//test
 public class Carta {
 	private char numero;
 	private char nipe;
