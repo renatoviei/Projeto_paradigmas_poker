@@ -1,17 +1,20 @@
 package beans;
 
 public class Mao {
-	private Carta[] mao;
+	private Carta[] cartas;
 	
-	public Mao (){
-		mao = new Carta[5];
+	public Mao (Carta[] mao){
+		this.setCartas(mao);
 	}
 
-	public Carta[] getMao() {
-		return mao;
+	public Carta[] getCartas() {
+		return cartas;
 	}
 
-	public void setMao(Carta[] mao) {
-		this.mao = mao;
+	public void setCartas(Carta[] mao) {
+		if (mao.length == 5)
+			this.cartas = mao;
+		else
+			System.out.println("TAMANHO DA MAO MAIOR QUE 5");
 	}
 }
