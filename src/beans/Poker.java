@@ -25,3 +25,4 @@ public class Poker {
 		this.jogador2 = jogador2;
 	}
 }
+	

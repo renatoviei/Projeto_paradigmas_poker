@@ -2,9 +2,11 @@ package beans;
 
 public class Jogador {
 	private Mao mao;
-	
-	public Jogador(Mao mao){
+	private int vitorias;
+
+	public Jogador(Mao mao, int vitorias) {
 		this.mao = mao;
+		this.setVitorias(vitorias);
 	}
 
 	public Mao getMao() {
@@ -14,4 +16,13 @@ public class Jogador {
 	public void setMao(Mao mao) {
 		this.mao = mao;
 	}
+
+	public int getVitorias() {
+		return vitorias;
+	}
+
+	public void setVitorias(int vitorias) {
+		this.vitorias = vitorias;
+	}
+
 }

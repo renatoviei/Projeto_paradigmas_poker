@@ -49,8 +49,10 @@ public class Principal {
 			ind = 0;
 			mao1 = new Mao(cartas1);
 			mao2 = new Mao(cartas2);
-			j1 = new Jogador (mao1);
-			j2 = new Jogador (mao2);
+			int vitorias1 = 0;
+			int vitorias2 = 0;
+			j1 = new Jogador (mao1, vitorias1);
+			j2 = new Jogador (mao2, vitorias2);
 			
 			jogo = new Poker(j1, j2);
 			
