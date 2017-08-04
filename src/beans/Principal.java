@@ -63,7 +63,9 @@ public class Principal {
 			for (int i = 0; i < 5; i++) {
 				numero1 = jogo.getJogador1().getMao().getCartas()[i].getNumero(); 
 				nipe1 = jogo.getJogador1().getMao().getCartas()[i].getNipe();
-				System.out.print(numero1 + nipe1 + " ");
+				System.out.print(numero1);
+				System.out.print(nipe1);
+				System.out.print(" ");
 			}
 			System.out.println();
 			
@@ -71,7 +73,9 @@ public class Principal {
 			for (int i = 0; i < 5; i++) {
 				numero2 = jogo.getJogador2().getMao().getCartas()[i].getNumero();
 				nipe2 = jogo.getJogador1().getMao().getCartas()[i].getNipe();
-				System.out.print(numero2 + nipe2 + " ");
+				System.out.print(numero2);
+				System.out.print(nipe2);
+				System.out.print(" ");
 			}
 			System.out.println();
 			System.out.println();
