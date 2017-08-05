@@ -3,6 +3,7 @@ package beans;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 
 public class Principal {
 
@@ -34,7 +35,7 @@ public class Principal {
 			for (int i = 0; i < 10; i++) {
 				numero = maos[i].charAt(0);
 				nipe = maos[i].charAt(1);
-				carta = new Carta(numero, nipe);
+				carta = new Carta(numero, nipe, 0);
 				if (i < 5) {
 					cartas1[ind] = carta;
 				}
@@ -86,7 +87,10 @@ public class Principal {
 		
 		arq.close();
 		file.close();
+		
+		
+		}
 
 	}
 
-}
+
