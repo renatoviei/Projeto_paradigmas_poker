@@ -5,10 +5,10 @@ public class Carta {
 	private char nipe;
 	private int peso;
 
-	public Carta(char numero, char nipe, int peso) {
+	public Carta(char numero, char nipe) {
 		this.numero = numero;
 		this.nipe = nipe;
-		this.setPeso(peso);
+		this.peso = 0;
 	}
 
 	public char getNumero() {

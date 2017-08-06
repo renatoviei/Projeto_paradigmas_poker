@@ -20,6 +20,9 @@ public class Principal {
 		int ind1 = 0;
 		int ind = 0;
 		
+		int vitorias1 = 0;
+		int vitorias2 = 0;
+				
 		Carta carta = null;
 		Carta cartas1[] = new Carta[5];
 		Carta cartas2[] = new Carta[5];
@@ -35,7 +38,8 @@ public class Principal {
 			for (int i = 0; i < 10; i++) {
 				numero = maos[i].charAt(0);
 				nipe = maos[i].charAt(1);
-				carta = new Carta(numero, nipe, 0);
+				carta = new Carta(numero, nipe);
+				carta.atribuirPeso(carta);
 				if (i < 5) {
 					cartas1[ind] = carta;
 				}
@@ -49,9 +53,10 @@ public class Principal {
 			}
 			ind = 0;
 			mao1 = new Mao(cartas1);
+			mao1.ordena(mao1);
 			mao2 = new Mao(cartas2);
-			int vitorias1 = 0;
-			int vitorias2 = 0;
+			mao2.ordena(mao2);
+			
 			j1 = new Jogador (mao1, vitorias1);
 			j2 = new Jogador (mao2, vitorias2);
 			
