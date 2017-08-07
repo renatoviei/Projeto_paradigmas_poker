@@ -50,13 +50,13 @@ public class Mao {
 	}
 
 	// METODO QUE VERIFICA SE A MAO POSSUI UM PAR, DUAS CARTAS COM MESMO VALOR
-	public boolean umPar(Mao mao) {
+	public boolean umPar(Mao mao) { //ok
 		boolean teste = false;
-		Mao ordenada = ordena(mao);
+		//Mao ordenada = ordena(mao);
 
-		for (int i = 0; i < ordenada.getCartas().length - 1; i++) {
+		for (int i = 0; i < mao.getCartas().length - 1; i++) {
 			for (int j = i + 1; j < mao.getCartas().length; j++) {
-				if (ordenada.getCartas()[i].getNumero() == ordenada.getCartas()[j].getNumero()) {
+				if (mao.getCartas()[i].getNumero() == mao.getCartas()[j].getNumero()) {
 
 					teste = true;
 					break;
@@ -67,40 +67,42 @@ public class Mao {
 	}
 
 	// METODO QUE VERIFICA SE A MAO POSSUI DOIS PARES
-	public boolean doisPares(Mao mao) {
+	public boolean doisPares(Mao mao) { //ok
 		boolean teste = false;
-		Mao ordenada = ordena(mao);
+		//Mao ordenada = ordena(mao);
 
 		char aux = '+';
-		for (int i = 0; i < ordenada.getCartas().length - 1; i++) {
+		for (int i = 0; i < mao.getCartas().length - 1; i++) {
 			for (int j = i + 1; j < mao.getCartas().length; j++) {
-				if (ordenada.getCartas()[i].getNumero() == ordenada.getCartas()[j].getNumero()) {
-
+				if (mao.getCartas()[i].getNumero() == mao.getCartas()[j].getNumero()) {
 					// ARMAZENA O VALOR DA CARTA PARA VERIFICAR SE ELE NÃO SE REPETE NO SEGUNDO
 					// TESTE
-					aux = ordenada.getCartas()[i].getNumero();
-					continue;
-
-				}
-				if ((ordenada.getCartas()[i].getNumero() == ordenada.getCartas()[j].getNumero())
-						&& (ordenada.getCartas()[i].getNumero() != aux && ordenada.getCartas()[j].getNumero() != aux)) {
-					teste = true;
+					aux = mao.getCartas()[i].getNumero();
 				}
 			}
-
+		}
+		if (aux != '+') {
+			for (int i = 0; i < mao.getCartas().length - 1; i++) {
+				for (int j = i + 1; j < mao.getCartas().length; j++) {
+					if ((mao.getCartas()[i].getNumero() == mao.getCartas()[j].getNumero()) 
+							&& (mao.getCartas()[i].getNumero() != aux) && (mao.getCartas()[j].getNumero() != aux)) {
+						teste = true;
+					}
+				}
+			}
 		}
 		return teste;
 	}
 
 	// METODO QUE VERIFICA SE A MAO POSSUI UMA QUADRA
-	public boolean quadra(Mao mao) {
+	public boolean quadra(Mao mao) { //ok
 		boolean teste = false;
-		Mao ordenada = ordena(mao);
-		for (int i = 0; i < ordenada.getCartas().length - 3; i++) {
+		//Mao ordenada = ordena(mao);
+		for (int i = 0; i < mao.getCartas().length - 3; i++) {
 			// VERIFICA 4 POSIÇOES COM O MESMO VALOR
-			if (ordenada.getCartas()[i].getNumero() == ordenada.getCartas()[i + 1].getNumero()
-					&& ordenada.getCartas()[i + 1].getNumero() == ordenada.getCartas()[i + 2].getNumero()
-					&& ordenada.getCartas()[i + 2].getNumero() == ordenada.getCartas()[i + 3].getNumero()) {
+			if (mao.getCartas()[i].getNumero() == mao.getCartas()[i + 1].getNumero()
+					&& mao.getCartas()[i + 1].getNumero() == mao.getCartas()[i + 2].getNumero()
+					&& mao.getCartas()[i + 2].getNumero() == mao.getCartas()[i + 3].getNumero()) {
 
 				teste = true;
 				break;

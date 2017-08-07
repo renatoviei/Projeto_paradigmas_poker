@@ -60,31 +60,7 @@ public class Principal {
 
 			jogo = new Poker(j1, j2);
 
-			char numero1 = '-';
-			char nipe1 = '+';
-			char numero2 = '-';
-			char nipe2 = '+';
 
-			System.out.print("jogador 1: ");
-			for (int i = 0; i < 5; i++) {
-				numero1 = jogo.getJogador1().getMao().getCartas()[i].getNumero();
-				nipe1 = jogo.getJogador1().getMao().getCartas()[i].getNipe();
-				System.out.print(numero1);
-				System.out.print(nipe1);
-				System.out.print(" ");
-			}
-			System.out.println();
-
-			System.out.print("jogador 2: ");
-			for (int i = 0; i < 5; i++) {
-				numero2 = jogo.getJogador2().getMao().getCartas()[i].getNumero();
-				nipe2 = jogo.getJogador2().getMao().getCartas()[i].getNipe();
-				System.out.print(numero2);
-				System.out.print(nipe2);
-				System.out.print(" ");
-			}
-			System.out.println();
-			System.out.println();
 
 		}
 
@@ -94,3 +70,36 @@ public class Principal {
 	}
 
 }
+
+
+
+
+
+
+
+
+//char numero1 = '-';
+//char nipe1 = '+';
+//char numero2 = '-';
+//char nipe2 = '+';
+//
+//System.out.print("jogador 1: ");
+//for (int i = 0; i < 5; i++) {
+//	numero1 = jogo.getJogador1().getMao().getCartas()[i].getNumero();
+//	nipe1 = jogo.getJogador1().getMao().getCartas()[i].getNipe();
+//	System.out.print(numero1);
+//	System.out.print(nipe1);
+//	System.out.print(" ");
+//}
+//System.out.println();
+//
+//System.out.print("jogador 2: ");
+//for (int i = 0; i < 5; i++) {
+//	numero2 = jogo.getJogador2().getMao().getCartas()[i].getNumero();
+//	nipe2 = jogo.getJogador2().getMao().getCartas()[i].getNipe();
+//	System.out.print(numero2);
+//	System.out.print(nipe2);
+//	System.out.print(" ");
+//}
+//System.out.println();
+//System.out.println();
