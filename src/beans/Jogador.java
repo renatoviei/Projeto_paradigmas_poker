@@ -2,7 +2,7 @@ package beans;
 
 public class Jogador {
 	private Mao mao;
-	private int vitorias;
+	//private int vitorias;
 	private boolean royalFlash;
 	private boolean strFlush;
 	private boolean flush;
@@ -16,9 +16,9 @@ public class Jogador {
 	
 	
 
-	public Jogador(Mao mao, int vitorias) {
+	public Jogador(Mao mao) {
 		this.mao = mao;
-		this.setVitorias(vitorias);
+		//this.setVitorias(vitorias);
 		this.royalFlash = false;
 		this.strFlush =false;
 		this.flush = false;
@@ -39,13 +39,13 @@ public class Jogador {
 		this.mao = mao;
 	}
 
-	public int getVitorias() {
-		return vitorias;
-	}
-
-	public void setVitorias(int vitorias) {
-		this.vitorias = vitorias;
-	}
+//	public int getVitorias() {
+//		return vitorias;
+//	}
+//
+//	public void setVitorias(int vitorias) {
+//		this.vitorias = vitorias;
+//	}
 
 	public boolean isRoyalFlash() {
 		return royalFlash;

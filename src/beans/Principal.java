@@ -3,11 +3,17 @@ package beans;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Date;
 
 public class Principal {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
+		Date data1 = new Date();
+		long inicio = data1.getTime();
+		long fim = 0;
+		long tempoDeExec = 0;
+		
 		FileReader file = new FileReader("artefatos\\pokerK.txt");
 		BufferedReader arq = new BufferedReader(file);
 
@@ -55,17 +61,21 @@ public class Principal {
 			mao2 = new Mao(cartas2);
 			mao2.ordena(mao2);
 
-			j1 = new Jogador(mao1, vitorias1);
-			j2 = new Jogador(mao2, vitorias2);
+			j1 = new Jogador(mao1);
+			j2 = new Jogador(mao2);
 
 			jogo = new Poker(j1, j2);
-
-
-
+			
 		}
 
 		arq.close();
 		file.close();
+		System.out.println("O jogador 1 venceu: " + vitorias1);
+		Date data2 = new Date();
+		fim = data2.getTime();
+		tempoDeExec = fim -inicio;
+		System.out.println("Tempo de execucao eh: " +tempoDeExec + "ms");
+		
 
 	}
 
