@@ -150,9 +150,73 @@ public class Mao {
 	public boolean fullHouse(Mao mao) { //ok
 		boolean teste = false;
 		//Mao ordenada = ordena(mao);
-		if ((this.umPar(mao) == true) && (this.trinca(mao) == true)) {
-			teste = true;
+		boolean par = false;
+		boolean trinca = false;
+		char aux = '+';
+		
+		//VERIFICA O TRINCA
+		int cont1 = 0;
+		int cont2 = 0;
+		int cont3 = 0;
+		int cont4 = 0;
+		int cont5 = 0;
+		char primeiro = mao.getCartas()[0].getNumero();
+		char segundo = mao.getCartas()[1].getNumero();
+		char terceiro = mao.getCartas()[2].getNumero();
+		char quarto = mao.getCartas()[3].getNumero();
+		char quinto = mao.getCartas()[4].getNumero();
+		
+		for (int i = 0; i < mao.getCartas().length; i++) {
+			if (primeiro == mao.getCartas()[i].getNumero())
+				cont1++;
+			if (segundo == mao.getCartas()[i].getNumero())
+				cont2++;
+			if (terceiro == mao.getCartas()[i].getNumero())
+				cont3++;
+			if (quarto ==  mao.getCartas()[i].getNumero())
+				cont4++;
+			if (quinto == mao.getCartas()[i].getNumero())
+				cont5++;
 		}
+		
+		if (cont1 == 3){
+			trinca = true;
+			aux = primeiro;
+		}
+		else if (cont2 == 3) {
+			trinca = true;
+			aux = segundo;
+		}
+		else if (cont3 == 3) {
+			trinca = true;
+			aux = terceiro;
+		}
+		else if (cont4 == 3) {
+			trinca = true;
+			aux = quarto;
+		}
+		else if (cont5 == 3) {
+			trinca = true;
+			aux = quinto;
+		}
+		
+		//VERIFICA A PAR, CONTANDO QUE NAO SEJA O MESMO NUMERO DO PAR
+		if (aux != '+' && trinca == true) {			
+			if ((mao.getCartas()[0].getNumero() == aux)) {
+				if (((mao.getCartas()[3].getNumero() == mao.getCartas()[4].getNumero())) && (mao.getCartas()[3].getNumero() != mao.getCartas()[2].getNumero())) {
+					par = true;					
+				}
+			}
+			else {
+				if (((mao.getCartas()[0].getNumero()) == mao.getCartas()[1].getNumero()) && (mao.getCartas()[0].getNumero() != mao.getCartas()[2].getNumero())){
+					par = true;
+				}
+			}
+		}
+		
+		if (par == true && trinca == true)
+			teste = true;	
+		
 		return teste;
 	}
 
@@ -225,7 +289,32 @@ public class Mao {
 	}
 	
 	public static void main (String[] args){
-		//Carta a = new Carta ();
+		Carta a0 = new Carta ('T', 'H');
+		a0.atribuirPeso(a0);
+		Carta a1 = new Carta ('Q', 'H');
+		a1.atribuirPeso(a1);
+		Carta a2 = new Carta ('K', 'H');
+		a2.atribuirPeso(a2);
+		Carta a3 = new Carta ('J', 'H');
+		a3.atribuirPeso(a3);
+		Carta a4 = new Carta ('A', 'H');
+		a4.atribuirPeso(a4);
+		
+		Carta cards[] = new Carta[5];
+		cards[0] = a0;
+		cards[1] = a1;
+		cards[2] = a2;
+		cards[3] = a3;
+		cards[4] = a4;
+		
+		Mao mao = new Mao(cards);
+		mao.ordena(mao);
+		
+		System.out.println(mao.royalFlash(mao));
+		
+		
+		
+		
 			
-	}
+	}	
 }
