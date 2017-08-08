@@ -18,7 +18,7 @@ public class Principal {
 		long inicio = data1.getTime();
 		long fim = 0;
 		long tempoDeExec = 0;
-		//MUDAR O NOME DO ARQUIVO NA PROXIMA LINHA, PARA O ARQUIVO DESENHADO -> "artefatos\\NomeDoArquivo.txt"
+		//MUDAR O NOME DO ARQUIVO NA PROXIMA LINHA, PARA O ARQUIVO DESEJADO -> "artefatos\\NomeDoArquivo.txt"
 		FileReader file = new FileReader("artefatos\\pokerM.txt");
 		BufferedReader arq = new BufferedReader(file);
 
