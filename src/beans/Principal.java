@@ -19,7 +19,7 @@ public class Principal {
 		long fim = 0;
 		long tempoDeExec = 0;
 		//MUDAR O NOME DO ARQUIVO NA PROXIMA LINHA, PARA O ARQUIVO DESENHADO -> "artefatos\\NomeDoArquivo.txt"
-		FileReader file = new FileReader("artefatos\\pokerK.txt");
+		FileReader file = new FileReader("artefatos\\pokerM.txt");
 		BufferedReader arq = new BufferedReader(file);
 
 		String linha = "";
@@ -116,7 +116,15 @@ public class Principal {
 									vitorias2++;
 								}
 								else {
-									empate++;
+									if(jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+										vitorias1++;
+									}
+									else if(jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+										vitorias2++;
+									}
+									else {
+										empate++;
+									}
 								}
 							}
 							else {
@@ -127,7 +135,15 @@ public class Principal {
 									vitorias2++;
 								}
 								else {
-									empate++;
+									if(jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+										vitorias1++;
+									}
+									else if(jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+										vitorias2++;
+									}
+									else {
+										empate++;
+									}
 								}
 							}
 						}
@@ -140,7 +156,15 @@ public class Principal {
 									vitorias2++;
 								}
 								else {
-									empate++;
+									if (jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+										vitorias1++;
+									}
+									else if (jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+										vitorias2++;
+									}
+									else {
+										empate++;
+									}
 								}
 							}
 							else {
@@ -151,12 +175,20 @@ public class Principal {
 									vitorias2++;
 								}
 								else {
-									empate++;
+									if (jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+										vitorias1++;
+									}
+									else if (jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+										vitorias2++;
+									}
+									else {
+										empate++;
+									}
 								}
 							}
 						}
 					}
-					else if (jogo.getJogador1().isQuadra() == false&& jogo.getJogador2().isQuadra() == false) { //SE TAMBÉM NAO FOR QUADRA, ENTAO VERIFICA FULLHOUSE
+					else if (jogo.getJogador1().isQuadra() == false && jogo.getJogador2().isQuadra() == false) { //SE TAMBÉM NAO FOR QUADRA, ENTAO VERIFICA FULLHOUSE
 						if(jogo.getJogador1().isFullHouse() == true && jogo.getJogador2().isFullHouse() == false) {
 							vitorias1++;
 						}
@@ -324,7 +356,7 @@ public class Principal {
 										}
 									}
 								}
-								else if(jogo.getJogador1().isStraight() == false && jogo.getJogador2().isStraight() == false) { //NAO TEVE FLUSH TAMBÉM, ENTAO VERIFICA SE TEM TRINCA 
+								else if(jogo.getJogador1().isStraight() == false && jogo.getJogador2().isStraight() == false) { //NAO TEVE STRAIGHT TAMBÉM, ENTAO VERIFICA SE TEM TRINCA 
 									if(jogo.getJogador1().isTrinca() == true && jogo.getJogador2().isTrinca() == false) {
 										vitorias1++;
 									}
@@ -333,82 +365,251 @@ public class Principal {
 									}
 									else if(jogo.getJogador1().isTrinca() == true && jogo.getJogador2().isTrinca() == true) {
 										//VERIFICA ONDE A TRINCA SE ENCONTRA PARA PODER COMPARAR OS OUTROS 2 VALORES 
-										if(jogo.getJogador1().getMao().getCartas()[0].getPeso() == jogo.getJogador1().getMao().getCartas()[1].getPeso()) {//TRINCA NO INICIO
-											if (jogo.getJogador2().getMao().getCartas()[0].getPeso() == jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
-												if (jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+										if(jogo.getJogador1().getMao().getCartas()[0].getPeso() == jogo.getJogador1().getMao().getCartas()[1].getPeso() && jogo.getJogador1().getMao().getCartas()[0].getPeso() == jogo.getJogador1().getMao().getCartas()[2].getPeso()) {//TRINCA NO INICIO
+											if (jogo.getJogador2().getMao().getCartas()[0].getPeso() == jogo.getJogador2().getMao().getCartas()[1].getPeso() && jogo.getJogador2().getMao().getCartas()[0].getPeso() == jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+												if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
 													vitorias1++;
 												}
-												else if (jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+												else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
 													vitorias2++;
 												}
 												else {
-													if (jogo.getJogador1().getMao().getCartas()[3].getPeso() > jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+													if (jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
 														vitorias1++;
 													}
-													else if (jogo.getJogador1().getMao().getCartas()[3].getPeso() < jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+													else if (jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
 														vitorias2++;
 													}
 													else {
-														empate++;
+														if (jogo.getJogador1().getMao().getCartas()[3].getPeso() > jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+															vitorias1++;
+														}
+														else if (jogo.getJogador1().getMao().getCartas()[3].getPeso() < jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															empate++;
+														}
 													}
 												}
 											}
-											else {
-												if (jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+											else if (jogo.getJogador2().getMao().getCartas()[2] == jogo.getJogador2().getMao().getCartas()[3] && jogo.getJogador2().getMao().getCartas()[2] == jogo.getJogador2().getMao().getCartas()[1]){
+												if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
 													vitorias1++;
 												}
-												else if (jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+												else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
 													vitorias2++;
 												}
 												else {
-													if (jogo.getJogador1().getMao().getCartas()[3].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+													if (jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
 														vitorias1++;
 													}
-													else if (jogo.getJogador1().getMao().getCartas()[3].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+													else if (jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
 														vitorias2++;
 													}
 													else {
-														empate++;
+														if (jogo.getJogador1().getMao().getCartas()[3].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias1++;
+														}
+														else if (jogo.getJogador1().getMao().getCartas()[3].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															empate++;
+														}
+													}
+												}
+											}
+											else if (jogo.getJogador2().getMao().getCartas()[2] == jogo.getJogador2().getMao().getCartas()[3] && jogo.getJogador2().getMao().getCartas()[2] == jogo.getJogador2().getMao().getCartas()[4]) {
+												if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias1++;
+												}
+												else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias2++;
+												}
+												else {
+													if(jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+														vitorias1++;
+													}
+													else if(jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+														vitorias2++;
+													}
+													else {
+														if(jogo.getJogador1().getMao().getCartas()[3].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias1++;
+														}
+														else if(jogo.getJogador1().getMao().getCartas()[3].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															empate++;
+														}
 													}
 												}
 											}
 										}
-										else {//TRINCA NO FINAL
-											if (jogo.getJogador2().getMao().getCartas()[0].getPeso() == jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
-												if (jogo.getJogador1().getMao().getCartas()[1].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
-													vitorias1++;
+										else  if(jogo.getJogador1().getMao().getCartas()[2].getPeso() == jogo.getJogador1().getMao().getCartas()[3].getPeso() && jogo.getJogador1().getMao().getCartas()[2].getPeso() == jogo.getJogador1().getMao().getCartas()[1].getPeso()){//TRINCA NO MEIO
+											if (jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[1].getPeso() && jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+												if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+												vitorias1++;
 												}
-												else if (jogo.getJogador1().getMao().getCartas()[1].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+												else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
 													vitorias2++;
 												}
 												else {
-													if (jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+													if(jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
 														vitorias1++;
 													}
-													else if (jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+													else if(jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
 														vitorias2++;
 													}
 													else {
-														empate++;
+														if(jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+															vitorias1++;
+														}
+														else if(jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															empate++;
+														}
 													}
 												}
 											}
-											else {
-												if (jogo.getJogador1().getMao().getCartas()[1].getPeso() > jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+											else if (jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[3].getPeso() && jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[1].getPeso()){
+												if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
 													vitorias1++;
 												}
-												else if (jogo.getJogador1().getMao().getCartas()[1].getPeso() < jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+												else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
 													vitorias2++;
 												}
 												else {
-													if (jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+													if(jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
 														vitorias1++;
 													}
-													else if (jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+													else if(jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
 														vitorias2++;
 													}
 													else {
-														empate++;
+														if(jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias1++;
+														}
+														else if(jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															empate++;
+														}
+													}
+												}
+											}
+											else if (jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[3].getPeso() && jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[4].getPeso()) { //trinca do j2 no final
+												if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias1++;
+												}
+												else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias2++;
+												}
+												else {
+													if(jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+														vitorias1++;
+													}
+													else if(jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+														vitorias2++;
+													}
+													else {
+														if(jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias1++;
+														}
+														else if(jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															empate++;
+														}
+													}
+												}
+											}
+										}
+										else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() == jogo.getJogador1().getMao().getCartas()[3].getPeso() && jogo.getJogador1().getMao().getCartas()[2].getPeso() == jogo.getJogador1().getMao().getCartas()[4].getPeso()) { //TRINCA NO FINAL
+											if (jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[1].getPeso() && jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+												if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias1++;
+												}
+												else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias2++;
+												}
+												else {
+													if (jogo.getJogador1().getMao().getCartas()[1].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+														vitorias1++;
+													}
+													else if (jogo.getJogador1().getMao().getCartas()[1].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+														vitorias2++;
+													}
+													else {
+														if (jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+															vitorias1++;
+														}
+														else if (jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															empate++;
+														}
+													}
+												}
+											}
+											else if (jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[1].getPeso() && jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+												if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias1++;
+												}
+												else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias2++;
+												}
+												else {
+													if(jogo.getJogador1().getMao().getCartas()[1].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+														vitorias1++;
+													}
+													else if(jogo.getJogador1().getMao().getCartas()[1].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+														vitorias2++;
+													}
+													else {
+														if(jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias1++;
+														}
+														else if(jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															empate++;
+														}
+													}
+												}
+											}
+											else if (jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[3].getPeso() && jogo.getJogador2().getMao().getCartas()[2].getPeso() == jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+												if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias1++;
+												}
+												else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+													vitorias2++;
+												}
+												else {
+													if (jogo.getJogador1().getMao().getCartas()[1].getPeso() > jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+														vitorias1++;
+													}
+													else if (jogo.getJogador1().getMao().getCartas()[1].getPeso() < jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+														vitorias2++;
+													}
+													else {
+														if (jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias1++;
+														}
+														else if (jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															empate++;
+														}
 													}
 												}
 											}

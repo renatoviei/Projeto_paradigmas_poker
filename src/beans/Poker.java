@@ -148,13 +148,13 @@ public class Poker {
 	public static void main (String[] args) {
 		Carta a0 = new Carta ('2', 'H');
 		a0.atribuirPeso(a0);
-		Carta a1 = new Carta ('3', 'H');
+		Carta a1 = new Carta ('4', 'H');
 		a1.atribuirPeso(a1);
-		Carta a2 = new Carta ('3', 'H');
+		Carta a2 = new Carta ('2', 'H');
 		a2.atribuirPeso(a2);
-		Carta a3 = new Carta ('Q', 'H');
+		Carta a3 = new Carta ('A', 'H');
 		a3.atribuirPeso(a3);
-		Carta a4 = new Carta ('A', 'H');
+		Carta a4 = new Carta ('K', 'H');
 		a4.atribuirPeso(a4);
 		
 		Carta cards[] = new Carta[5];
@@ -165,6 +165,7 @@ public class Poker {
 		cards[4] = a4;
 		
 		Mao m = new Mao(cards);
+		m.ordena(m);
 		Jogador j = new Jogador(m);
 		
 		Poker p = new Poker(j, null);
