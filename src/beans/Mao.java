@@ -1,5 +1,8 @@
 package beans;
 
+//import paradigmas.Carta;
+//import paradigmas.Mao;
+
 public class Mao {
 	private Carta[] cartas;
 
@@ -275,7 +278,7 @@ public class Mao {
 	}
 
 	// METODO QUE VERIFICA SE É UM ROYAL FLASH
-	public boolean royalFlash(Mao mao) { //ok
+	public boolean royalFlush(Mao mao) { //ok
 		boolean teste = false;
 		//Mao ordenada = ordena(mao);
 		if (this.flush(mao) == true) { // FALTA A CONDIÇÃO PARA VER SE TEM 10, Valete, Dama, Rei e Ás
@@ -310,7 +313,7 @@ public class Mao {
 		Mao mao = new Mao(cards);
 		mao.ordena(mao);
 		
-		System.out.println(mao.royalFlash(mao));
+		System.out.println(mao.royalFlush(mao));
 		
 		
 		

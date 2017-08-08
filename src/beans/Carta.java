@@ -1,5 +1,7 @@
 package beans;
 
+//import paradigmas.Carta;
+
 public class Carta {
 	private char numero;
 	private char nipe;

@@ -1,9 +1,11 @@
 package beans;
 
+//import paradigmas.Mao;
+
 public class Jogador {
 	private Mao mao;
 	//private int vitorias;
-	private boolean royalFlash;
+	private boolean royalFlush;
 	private boolean strFlush;
 	private boolean flush;
 	private boolean quadra;
@@ -19,7 +21,7 @@ public class Jogador {
 	public Jogador(Mao mao) {
 		this.mao = mao;
 		//this.setVitorias(vitorias);
-		this.royalFlash = false;
+		this.royalFlush = false;
 		this.strFlush =false;
 		this.flush = false;
 		this.quadra = false;
@@ -47,12 +49,12 @@ public class Jogador {
 //		this.vitorias = vitorias;
 //	}
 
-	public boolean isRoyalFlash() {
-		return royalFlash;
+	public boolean isRoyalFlush() {
+		return royalFlush;
 	}
 
-	public void setRoyalFlash(boolean royalFlush) {
-		this.royalFlash = royalFlush;
+	public void setRoyalFlush(boolean royalFlush) {
+		this.royalFlush = royalFlush;
 	}
 
 	public boolean isStrFlush() {
@@ -128,3 +130,4 @@ public class Jogador {
 	}
 	
 }
+
