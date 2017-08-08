@@ -757,14 +757,12 @@ public class Principal {
 		arq.close();
 		file.close();
 		System.out.println("O jogador 1 venceu: " + vitorias1);
-		System.out.println("O jogador 2 venceu: " + vitorias2);
-		System.out.println("Empates: " + empate);
+		//System.out.println("O jogador 2 venceu: " + vitorias2);
+		//System.out.println("Empates: " + empate);
 		Date data2 = new Date();
 		fim = data2.getTime();
 		tempoDeExec = fim -inicio;
-		System.out.println("Tempo de execucao eh: " +tempoDeExec + "ms");
-		
-
+		System.out.println("Tempo de Execucao: "+tempoDeExec+"ms");
 	}
 
 }
