@@ -1,4 +1,4 @@
-package beans;
+package versao1;
 
 //import paradigmas.Carta;
 
