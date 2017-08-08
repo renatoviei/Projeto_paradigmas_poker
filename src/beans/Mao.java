@@ -60,7 +60,6 @@ public class Mao {
 		for (int i = 0; i < mao.getCartas().length - 1; i++) {
 			for (int j = i + 1; j < mao.getCartas().length; j++) {
 				if (mao.getCartas()[i].getNumero() == mao.getCartas()[j].getNumero()) {
-
 					teste = true;
 					break;
 				}

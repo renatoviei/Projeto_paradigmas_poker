@@ -421,11 +421,124 @@ public class Principal {
 										else if(jogo.getJogador1().isDoisPares() == false && jogo.getJogador2().isDoisPares() == true) {
 											vitorias2++;
 										}
-										else if(jogo.getJogador1().isDoisPares() == true && jogo.getJogador2().isDoisPares() == true) {//OS DOIS TEM DOIS PARES
-											
+										else if(jogo.getJogador1().isDoisPares() == true && jogo.getJogador2().isDoisPares() == true) {//EMPATE NOS PARES
+											Carta paresEExtraDe1[] = jogo.identifica2Pares(jogo.getJogador1());
+											Carta paresEExtraDe2[] = jogo.identifica2Pares(jogo.getJogador2());
+											if(paresEExtraDe1[1].getPeso() > paresEExtraDe2[1].getPeso()) {
+												vitorias1++;
+											}
+											else if(paresEExtraDe1[1].getPeso() < paresEExtraDe2[1].getPeso()) {
+												vitorias2++;
+											}
+											else {
+												if(paresEExtraDe1[0].getPeso() > paresEExtraDe2[0].getPeso()) {
+													vitorias1++;
+												}
+												else if(paresEExtraDe1[0].getPeso() < paresEExtraDe2[0].getPeso()) {
+													vitorias2++;
+												}
+												else {
+													if(paresEExtraDe1[2].getPeso() > paresEExtraDe2[2].getPeso()) {
+														vitorias1++;
+													}
+													else if(paresEExtraDe1[2].getPeso() < paresEExtraDe2[2].getPeso()) {
+														vitorias2++;
+													}
+													else {
+														empate++;
+													}
+												}
+											}											
 										}
-										else if(jogo.getJogador1().isDoisPares() == false && jogo.getJogador2().isDoisPares() == false) {
-											
+										else if(jogo.getJogador1().isDoisPares() == false && jogo.getJogador2().isDoisPares() == false) { //TAMBÉM NAO TEM 2 PARES, ENTAO VERIFICA SE TEM UM PAR
+											if(jogo.getJogador1().isPar() == true && jogo.getJogador2().isPar() == false) {
+												vitorias1++;
+											}
+											else if(jogo.getJogador1().isPar() == false && jogo.getJogador2().isPar() == true) {
+												vitorias2++;
+											}
+											else if(jogo.getJogador1().isPar() == true && jogo.getJogador2().isPar() == true) {//EMPATE NOS PARES
+												Carta parEExtras1 []= jogo.identificaUmPar(jogo.getJogador1());
+												Carta parEExtras2 [] = jogo.identificaUmPar(jogo.getJogador2());
+												
+												if(parEExtras1[0].getPeso() > parEExtras2[0].getPeso()) {
+													vitorias1++;
+												}
+												else if(parEExtras1[0].getPeso() < parEExtras2[0].getPeso()) {
+													vitorias2++;
+												}
+												else {
+													if(parEExtras1[3].getPeso() > parEExtras2[3].getPeso()) {
+														vitorias1++;
+													}
+													else if(parEExtras1[3].getPeso() < parEExtras2[3].getPeso()) {
+														vitorias2++;
+													}
+													else {
+														if(parEExtras1[2].getPeso() > parEExtras2[2].getPeso()) {
+															vitorias1++;
+														}
+														else if(parEExtras1[2].getPeso() < parEExtras2[2].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															if(parEExtras1[1].getPeso() > parEExtras2[1].getPeso()) {
+																vitorias1++;
+															}
+															else if(parEExtras1[1].getPeso() < parEExtras2[1].getPeso()) {
+																vitorias2++;
+															}
+															else {
+																empate++;
+															}
+														}
+													}
+												}
+											}
+											else if(jogo.getJogador1().isPar() == false && jogo.getJogador2().isPar() == false) { //TAMBÉM NAO TEM PAR, ENTAO VAI PARA A CARTA ALTA
+												//COMO NAO TEM NENHUMA JOGADA NA MAO, VERIFICA A CARTA MAIS ALTA PARA DECIDIR QUEM GANHA
+												if(jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+													vitorias1++;
+												}
+												else if(jogo.getJogador1().getMao().getCartas()[4].getPeso() < jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
+													vitorias2++;
+												}
+												else {
+													if(jogo.getJogador1().getMao().getCartas()[3].getPeso() > jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+														vitorias1++;
+													}
+													else if(jogo.getJogador1().getMao().getCartas()[3].getPeso() < jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
+														vitorias2++;
+													}
+													else {
+														if(jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+															vitorias1++;
+														}
+														else if(jogo.getJogador1().getMao().getCartas()[2].getPeso() < jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
+															vitorias2++;
+														}
+														else {
+															if(jogo.getJogador1().getMao().getCartas()[1].getPeso() > jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+																vitorias1++;
+															}
+															else if(jogo.getJogador1().getMao().getCartas()[1].getPeso() < jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
+																vitorias2++;
+															}
+															else {
+																if(jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+																	vitorias1++;
+																}
+																else if(jogo.getJogador1().getMao().getCartas()[0].getPeso() < jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
+																	vitorias2++;
+																}
+																else {
+																	empate++;
+																}
+															}
+														}
+													}
+												}
+											}
 										}
 									}
 								}
