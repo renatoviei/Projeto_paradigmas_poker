@@ -5,7 +5,7 @@ package versao3;
 public class Carta {
 	private char numero;
 	private char nipe;
-	private int peso;
+	private Integer peso;
 
 	public Carta(char numero, char nipe) {
 		this.numero = numero;
@@ -29,11 +29,11 @@ public class Carta {
 		this.nipe = nipe;
 	}
 
-	public int getPeso() {
+	public Integer getPeso() {
 		return peso;
 	}
 
-	public void setPeso(int peso) {
+	public void setPeso(Integer peso) {
 		this.peso = peso;
 	}
 

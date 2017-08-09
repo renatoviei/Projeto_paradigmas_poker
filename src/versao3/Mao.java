@@ -117,11 +117,11 @@ public class Mao {
 	public boolean trinca(Mao mao) { //ok
 		boolean teste = false;
 		//Mao ordenada = ordena(mao);
-		int cont1 = 0;
-		int cont2 = 0;
-		int cont3 = 0;
-		int cont4 = 0;
-		int cont5 = 0;
+		Integer cont1 = 0;
+		Integer cont2 = 0;
+		Integer cont3 = 0;
+		Integer cont4 = 0;
+		Integer cont5 = 0;
 		char primeiro = mao.getCartas()[0].getNumero();
 		char segundo = mao.getCartas()[1].getNumero();
 		char terceiro = mao.getCartas()[2].getNumero();
@@ -157,11 +157,11 @@ public class Mao {
 		char aux = '+';
 		
 		//VERIFICA O TRINCA
-		int cont1 = 0;
-		int cont2 = 0;
-		int cont3 = 0;
-		int cont4 = 0;
-		int cont5 = 0;
+		Integer cont1 = 0;
+		Integer cont2 = 0;
+		Integer cont3 = 0;
+		Integer cont4 = 0;
+		Integer cont5 = 0;
 		char primeiro = mao.getCartas()[0].getNumero();
 		char segundo = mao.getCartas()[1].getNumero();
 		char terceiro = mao.getCartas()[2].getNumero();
@@ -226,11 +226,11 @@ public class Mao {
 	public boolean sequenciaStraight(Mao mao) { //ok
 		boolean teste = false;
 		//Mao ordenada = ordena(mao);
-		int primeira = mao.getCartas()[0].getPeso();
-		int segunda = mao.getCartas()[1].getPeso();
-		int terceira = mao.getCartas()[2].getPeso();
-		int quarta = mao.getCartas()[3].getPeso();
-		int quinta = mao.getCartas()[4].getPeso();
+		Integer primeira = mao.getCartas()[0].getPeso();
+		Integer segunda = mao.getCartas()[1].getPeso();
+		Integer terceira = mao.getCartas()[2].getPeso();
+		Integer quarta = mao.getCartas()[3].getPeso();
+		Integer quinta = mao.getCartas()[4].getPeso();
 		 		
 		primeira++;
 		if(primeira == segunda){
