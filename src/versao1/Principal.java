@@ -13,7 +13,7 @@ import java.util.Date;
 public class Principal {
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
+		
 		Date data1 = new Date();
 		long inicio = data1.getTime();
 		long fim = 0;
@@ -751,9 +751,8 @@ public class Principal {
 			else {
 				empate++;
 			}
-		
 		}
-
+		
 		arq.close();
 		file.close();
 		System.out.println("O jogador 1 venceu: " + vitorias1);
@@ -763,152 +762,6 @@ public class Principal {
 		fim = data2.getTime();
 		tempoDeExec = fim -inicio;
 		System.out.println("Tempo de Execucao: "+tempoDeExec+"ms");
-
 	}
 
 }
-
-
-
-
-//char numero1 = '-';
-//char nipe1 = '+';
-//char numero2 = '-';
-//char nipe2 = '+';
-//
-//System.out.print("jogador 1: ");
-//for (int i = 0; i < 5; i++) {
-//	numero1 = jogo.getJogador1().getMao().getCartas()[i].getNumero();
-//	nipe1 = jogo.getJogador1().getMao().getCartas()[i].getNipe();
-//	System.out.print(numero1);
-//	System.out.print(nipe1);
-//	System.out.print(" ");
-//}
-//System.out.print("\t" + jogo.getJogador1().isRoyalFlush());
-//System.out.print("    " + jogo.getJogador1().isStrFlush());
-//System.out.print("    " + jogo.getJogador1().isQuadra());
-//System.out.print("    " + jogo.getJogador1().isFullHouse());
-//System.out.print("    " + jogo.getJogador1().isFlush());
-//System.out.print("    " + jogo.getJogador1().isStraight());
-//System.out.print("    " + jogo.getJogador1().isTrinca());
-//System.out.print("    " + jogo.getJogador1().isDoisPares());
-//System.out.print("    " + jogo.getJogador1().isPar());
-//System.out.println("    " + jogo.getJogador1().isCartaAlta());
-//System.out.println();
-//
-//
-//System.out.print("jogador 2: ");
-//for (int i = 0; i < 5; i++) {
-//	numero2 = jogo.getJogador2().getMao().getCartas()[i].getNumero();
-//	nipe2 = jogo.getJogador2().getMao().getCartas()[i].getNipe();
-//	System.out.print(numero2);
-//	System.out.print(nipe2);
-//	System.out.print(" ");
-//}
-//System.out.print("\t" + jogo.getJogador2().isRoyalFlush());
-//System.out.print("    " + jogo.getJogador2().isStrFlush());
-//System.out.print("    " + jogo.getJogador2().isQuadra());
-//System.out.print("    " + jogo.getJogador2().isFullHouse());
-//System.out.print("    " + jogo.getJogador2().isFlush());
-//System.out.print("    " + jogo.getJogador2().isStraight());
-//System.out.print("    " + jogo.getJogador2().isTrinca());
-//System.out.print("    " + jogo.getJogador2().isDoisPares());
-//System.out.print("    " + jogo.getJogador2().isPar());
-//System.out.println("    " + jogo.getJogador2().isCartaAlta());
-//System.out.println();
-//System.out.println();
-
-
-
-//char numero1 = '-';
-//char nipe1 = '+';
-//char numero2 = '-';
-//char nipe2 = '+';
-//
-//System.out.print("jogador 1: ");
-//for (int i = 0; i < 5; i++) {
-//	numero1 = jogo.getJogador1().getMao().getCartas()[i].getNumero();
-//	nipe1 = jogo.getJogador1().getMao().getCartas()[i].getNipe();
-//	System.out.print(numero1);
-//	System.out.print(nipe1);
-//	System.out.print(" ");
-//}
-//System.out.println();
-//
-//System.out.print("jogador 2: ");
-//for (int i = 0; i < 5; i++) {
-//	numero2 = jogo.getJogador2().getMao().getCartas()[i].getNumero();
-//	nipe2 = jogo.getJogador2().getMao().getCartas()[i].getNipe();
-//	System.out.print(numero2);
-//	System.out.print(nipe2);
-//	System.out.print(" ");
-//}
-//System.out.println();
-//System.out.println();
-
-
-
-
-
-
-
-
-////VERIFICA SE QUEM GANHA POR ROYALFLUSH... CASO ACONTEÇA O EMPATE, NAO TEM COMO DESEMPATAR POR MAIOR CARTA
-//if (jogo.getJogador1().getMao().royalFlush(jogo.getJogador1().getMao()) == true && jogo.getJogador2().getMao().royalFlush(jogo.getJogador2().getMao()) == false) {
-//	vitorias1++;
-//}
-//
-//else if (jogo.getJogador1().getMao().royalFlush(jogo.getJogador1().getMao()) == false && jogo.getJogador2().getMao().royalFlush(jogo.getJogador2().getMao()) == true) {
-//	vitorias2++;
-//}
-//
-//else if(jogo.getJogador1().getMao().royalFlush(jogo.getJogador1().getMao()) == false && jogo.getJogador2().getMao().royalFlush(jogo.getJogador2().getMao()) == false){ 			//SE NAO TIVER ROYALFLUSH, VERIFICA SE ALGUM TEM STRAIGHTFLUSH
-//	
-//	if(jogo.getJogador1().getMao().straightFlush(jogo.getJogador1().getMao()) == true && jogo.getJogador2().getMao().straightFlush(jogo.getJogador2().getMao()) == false) {
-//		vitorias1++;
-//	}
-//	
-//	else if(jogo.getJogador1().getMao().straightFlush(jogo.getJogador1().getMao()) == false && jogo.getJogador2().getMao().straightFlush(jogo.getJogador2().getMao()) == true) {
-//		vitorias2++;
-//	}
-//	
-//	else if (jogo.getJogador1().getMao().straightFlush(jogo.getJogador1().getMao()) == false && jogo.getJogador2().getMao().straightFlush(jogo.getJogador2().getMao()) == false) { // SE TAMBÉM NAO TIVER STRAIGHTFLUSH, VERIFICA SE TEM UM FLUSH
-//		if (jogo.getJogador1().getMao().flush(jogo.getJogador1().getMao()) == true && jogo.getJogador2().getMao().flush(jogo.getJogador2().getMao()) == false) {
-//			vitorias1++;
-//		}
-//		else if (jogo.getJogador1().getMao().flush(jogo.getJogador1().getMao()) == false && jogo.getJogador2().getMao().flush(jogo.getJogador2().getMao()) == true) {
-//			vitorias2++;
-//		}
-//		else if (jogo.getJogador1().getMao().flush(jogo.getJogador1().getMao()) == true && jogo.getJogador2().getMao().flush(jogo.getJogador2().getMao()) ==  true) {//DESEMPATE PARA FLUSH
-//			if (jogo.getJogador1().getMao().getCartas()[4].getPeso() > jogo.getJogador2().getMao().getCartas()[4].getPeso()) {
-//				vitorias1++;
-//			}
-//			else if (jogo.getJogador1().getMao().getCartas()[3].getPeso() > jogo.getJogador2().getMao().getCartas()[3].getPeso()) {
-//				vitorias1++;
-//			}
-//			else if (jogo.getJogador1().getMao().getCartas()[2].getPeso() > jogo.getJogador2().getMao().getCartas()[2].getPeso()) {
-//				vitorias1++;
-//			}
-//			else if (jogo.getJogador1().getMao().getCartas()[1].getPeso() > jogo.getJogador2().getMao().getCartas()[1].getPeso()) {
-//				vitorias1++;
-//			}
-//			else if (jogo.getJogador1().getMao().getCartas()[0].getPeso() > jogo.getJogador2().getMao().getCartas()[0].getPeso()) {
-//				vitorias1++;
-//			}
-//			else {
-//				empate++;
-//			}
-//		}
-//		else if (jogo.getJogador1().getMao().flush(jogo.getJogador1().getMao()) == false && jogo.getJogador2().getMao().flush(jogo.getJogador2().getMao()) == false) { //SE TAMBÉM NAO TEM FLUSH, VERIFICA SE TEM
-//			
-//		}
-//	}
-//	
-//	else {
-//		empate++;
-//	}
-//}
-//
-//else {
-//	empate++;
-//}	
