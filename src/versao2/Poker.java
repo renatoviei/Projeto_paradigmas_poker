@@ -32,8 +32,8 @@ public class Poker {
 		Carta retorno[] = new Carta[4];
 		int idRetorno = 1;
 		
-		for (int i = 0; i < jogador.getMao().getCartas().length - 1; i++) {
-			for (int j = i + 1; j < jogador.getMao().getCartas().length; j++) {
+		for (byte i = 0; i < jogador.getMao().getCartas().length - 1; i++) {
+			for (byte j = (byte) (i + 1); j < jogador.getMao().getCartas().length; j++) {
 				if (jogador.getMao().getCartas()[i].getNumero() == jogador.getMao().getCartas()[j].getNumero()) {
 					retorno[0] = jogador.getMao().getCartas()[i];
 					break;
@@ -41,7 +41,7 @@ public class Poker {
 			}
 		}
 		if (!retorno[0].equals(null)) {
-			for(int a = 0 ; a < jogador.getMao().getCartas().length; a++) {
+			for(byte a = 0 ; a < jogador.getMao().getCartas().length; a++) {
 				if(jogador.getMao().getCartas()[a].getNumero() != retorno[0].getNumero()) {
 					retorno[idRetorno] = jogador.getMao().getCartas()[a];
 					idRetorno++;
@@ -55,8 +55,8 @@ public class Poker {
 		Carta retorno[] = new Carta[3];
 		char aux = '+';
 		char dif = '-';
-		for (int i = 0; i < jogador.getMao().getCartas().length - 1; i++) {
-			for (int j = i + 1; j < jogador.getMao().getCartas().length; j++) {
+		for (byte i = 0; i < jogador.getMao().getCartas().length - 1; i++) {
+			for (byte j = (byte) (i + 1); j < jogador.getMao().getCartas().length; j++) {
 				if (jogador.getMao().getCartas()[i].getNumero() == jogador.getMao().getCartas()[j].getNumero()) {
 					// ARMAZENA O VALOR DA CARTA PARA VERIFICAR SE ELE NÃO SE REPETE NO SEGUNDO
 					// TESTE
@@ -65,8 +65,8 @@ public class Poker {
 			}
 		}
 		if (aux != '+') {
-			for (int i = 0; i < jogador.getMao().getCartas().length - 1; i++) {
-				for (int j = i + 1; j < jogador.getMao().getCartas().length; j++) {
+			for (byte i = 0; i < jogador.getMao().getCartas().length - 1; i++) {
+				for (byte j = (byte) (i + 1); j < jogador.getMao().getCartas().length; j++) {
 					if ((jogador.getMao().getCartas()[i].getNumero() == jogador.getMao().getCartas()[j].getNumero()) 
 							&& (jogador.getMao().getCartas()[i].getNumero() != aux) && (jogador.getMao().getCartas()[j].getNumero() != aux)) {
 						retorno[0] = jogador.getMao().getCartas()[i];
@@ -77,7 +77,7 @@ public class Poker {
 				}
 			}
 			if(retorno[1].getNumero() == aux) {
-				for (int i = 0; i < jogador.getMao().getCartas().length; i++) {
+				for (byte i = 0; i < jogador.getMao().getCartas().length; i++) {
 					if (jogador.getMao().getCartas()[i].getNumero() != retorno[0].getNumero() && jogador.getMao().getCartas()[i].getNumero() != retorno[1].getNumero())
 						retorno [2] = jogador.getMao().getCartas()[i];
 				}
@@ -172,7 +172,7 @@ public class Poker {
 		//Carta doisParesEExtra[] = p.identifica2Pares(p.getJogador1());
 		Carta ParEExtras[] = p.identificaUmPar(p.getJogador1());
 		
-		for(int i = 0; i < ParEExtras.length; i++)
+		for(byte i = 0; i < ParEExtras.length; i++)
 			System.out.println(ParEExtras[i].getNumero() + " " + ParEExtras[i].getPeso());
 		
 		

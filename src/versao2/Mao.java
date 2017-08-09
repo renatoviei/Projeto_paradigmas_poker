@@ -27,11 +27,11 @@ public class Mao {
 	{
 		Mao maoAux = mao;
 
-		int i, j, min;
+		byte i, j, min;
 		Carta x;
 		for (i = 0; i < maoAux.getCartas().length - 1; ++i) {
 			min = i;
-			for (j = i + 1; j < maoAux.getCartas().length; ++j) {
+			for (j = (byte) (i + 1); j < maoAux.getCartas().length; ++j) {
 				if (maoAux.getCartas()[j].getPeso() < maoAux.getCartas()[min].getPeso())
 					min = j;
 			}
@@ -57,8 +57,8 @@ public class Mao {
 		boolean teste = false;
 		//Mao ordenada = ordena(mao);
 
-		for (int i = 0; i < mao.getCartas().length - 1; i++) {
-			for (int j = i + 1; j < mao.getCartas().length; j++) {
+		for (byte i = 0; i < mao.getCartas().length - 1; i++) {
+			for (byte j = (byte) (i + 1); j < mao.getCartas().length; j++) {
 				if (mao.getCartas()[i].getNumero() == mao.getCartas()[j].getNumero()) {
 					teste = true;
 					break;
@@ -74,8 +74,8 @@ public class Mao {
 		//Mao ordenada = ordena(mao);
 
 		char aux = '+';
-		for (int i = 0; i < mao.getCartas().length - 1; i++) {
-			for (int j = i + 1; j < mao.getCartas().length; j++) {
+		for (byte i = 0; i < mao.getCartas().length - 1; i++) {
+			for (byte j = (byte) (i + 1); j < mao.getCartas().length; j++) {
 				if (mao.getCartas()[i].getNumero() == mao.getCartas()[j].getNumero()) {
 					// ARMAZENA O VALOR DA CARTA PARA VERIFICAR SE ELE NÃO SE REPETE NO SEGUNDO
 					// TESTE
@@ -84,8 +84,8 @@ public class Mao {
 			}
 		}
 		if (aux != '+') {
-			for (int i = 0; i < mao.getCartas().length - 1; i++) {
-				for (int j = i + 1; j < mao.getCartas().length; j++) {
+			for (byte i = 0; i < mao.getCartas().length - 1; i++) {
+				for (byte j = (byte) (i + 1); j < mao.getCartas().length; j++) {
 					if ((mao.getCartas()[i].getNumero() == mao.getCartas()[j].getNumero()) 
 							&& (mao.getCartas()[i].getNumero() != aux) && (mao.getCartas()[j].getNumero() != aux)) {
 						teste = true;
@@ -168,7 +168,7 @@ public class Mao {
 		char quarto = mao.getCartas()[3].getNumero();
 		char quinto = mao.getCartas()[4].getNumero();
 		
-		for (int i = 0; i < mao.getCartas().length; i++) {
+		for (byte i = 0; i < mao.getCartas().length; i++) {
 			if (primeiro == mao.getCartas()[i].getNumero())
 				cont1++;
 			if (segundo == mao.getCartas()[i].getNumero())
@@ -256,7 +256,7 @@ public class Mao {
 	public boolean flush(Mao mao) { //ok
 		boolean teste = true;
 		//Mao ordenada = ordena(mao);
-		for (int j = 1; j < mao.getCartas().length; j++) {
+		for (byte j = 1; j < mao.getCartas().length; j++) {
 			if (mao.getCartas()[0].getNipe() != mao.getCartas()[j].getNipe()) {	//CASO ALGUMA CARTA TENHA NIPE DIFERENTE DAS DEMAIS, RETORNA FALSE. SE FOREM TODAS DO MESMO NIPE, RETORNA TRUE
 				teste = false;
 			}

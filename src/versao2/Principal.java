@@ -19,7 +19,7 @@ public class Principal {
 		long fim = 0;
 		long tempoDeExec = 0;
 		//MUDAR O NOME DO ARQUIVO NA PROXIMA LINHA, PARA O ARQUIVO DESEJADO -> "artefatos\\NomeDoArquivo.txt"
-		FileReader file = new FileReader("artefatos\\pokerM.txt");
+		FileReader file = new FileReader("artefatos\\pokerK.txt");
 		BufferedReader arq = new BufferedReader(file);
 
 		String linha = "";
@@ -43,7 +43,7 @@ public class Principal {
 
 		while ((linha = arq.readLine()) != null) {
 			maos = linha.split(" ");
-			for (int i = 0; i < 10; i++) {
+			for (byte i = 0; i < 10; i++) {
 				numero = maos[i].charAt(0);
 				nipe = maos[i].charAt(1);
 				carta = new Carta(numero, nipe);
