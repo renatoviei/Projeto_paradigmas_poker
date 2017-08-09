@@ -19,7 +19,7 @@ public class Principal {
 		long fim = 0;
 		long tempoDeExec = 0;
 		//MUDAR O NOME DO ARQUIVO NA PROXIMA LINHA, PARA O ARQUIVO DESEJADO -> "artefatos\\NomeDoArquivo.txt"
-		FileReader file = new FileReader("artefatos\\pokerK.txt");
+		FileReader file = new FileReader("F:\\Estudo BCC\\Disciplinas\\6º - PERÍODO\\Paradigmas\\Projeto\\poker100M.txt");
 		BufferedReader arq = new BufferedReader(file);
 
 		String linha = "";
